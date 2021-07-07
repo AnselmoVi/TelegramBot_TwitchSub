@@ -49,9 +49,9 @@ def send_welcome(message):
 @bot.message_handler(commands=['ban'])
 def send_welcome(message):
     print(message.chat.id)
-    #if (message.chat.id==166391057)  :  
    
-    bot.reply_to(message, """mo li banno""")
+   
+    bot.reply_to(message, """utenti da bannare""")
     banna(message)
     
     
