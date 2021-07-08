@@ -4,5 +4,5 @@ This bot will kick out expired subs from your group Telegram (Subs only)
 Questo bot tramite l'utilizzo di Python e delle API fornite da Twitch permette di eliminare automaticamente dal tuo gruppo telegram  gli utenti il cui abbonamento al canale è scaduto.
 Le informazioni sono ottenute grazie alle API di twitch, gestite interamente dal framework Flask avviato in un thread.
 
-<b><Get started</b>
+<b>Getting started</b>
   Se ancora non hai l'accesso alle API di twitch ti consiglio di visitare la documentazione ufficiale https://dev.twitch.tv/docs/authentication
