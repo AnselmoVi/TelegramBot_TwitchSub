@@ -41,7 +41,9 @@ def send_welcome(message):
                 command, payload = message.text.split(' ')
                 print ('Payload:', payload)
                 print ('User ID:', message.chat.id)
-                
+                #qui il bot si aspetta che l'utente avvii il bot con questo link:   LINK_DI_INVITO_AL_BOT/?start=NICK/ID_UTENTE_TWITCH
+                 #Per settarlo bisogna gestire le impostazioni del bot StreamElements di twitch, in modo che una volta che  l'utente scrive in chat !telegram, streamelements mandi in privato questo link con l'id dell'utente che l'ha richiesto
+               #in questo modo avrò l'id twitch di tutti coloro che sono entrati nel gruppo telegram. Senza questo passaggio avrei solo la lista sub ottenuta da twitch e non avrei modo di capire chi nel gruppo è sub o meno 
                 insert(payload,message.chat.id)
    except ValueError:
        print ('No payload, or more than one chunk of payload')
@@ -95,7 +97,7 @@ def insert(contenuto,id_tg): #Funzione che inserisce i nuovi sub
     file_uno.close()    
     
 
-def getsub(message): #Funzione che manda il link all'utente per effettuare la richiesta token
+def getsub(message): #Funzione che manda il link al prop. del canale twitch per effettuare la richiesta token
      payload = {'client_id':'ID','redirect_uri':'INDIRIZZO','response_type':'code','scope':'channel:read:subscriptions'}
     
      r = requests.get("https://id.twitch.tv/oauth2/authorize", params=payload)
